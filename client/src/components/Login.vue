@@ -3,12 +3,7 @@
     <br><br>
     <v-layout>
       <v-flex xs6 offset-sm3>
-        <div class="white elevation-1">
-          <v-toolbar  dense class="light-blue accent-4" dark>
-            <v-toolbar-title> Login </v-toolbar-title>
-          </v-toolbar>
-          <div class="pl-4 pr-5 pt-2 pb-2">
-            
+        <Panel title="Login">
              <v-text-field
                 label="email"
                 name="email"
@@ -26,18 +21,20 @@
               <v-card-actions class="justify-center">
                 <v-btn class="light-blue accent-4 white--text" @click="login"> login </v-btn>
               </v-card-actions>
-            
-          </div>
-        </div>
+        </Panel>
       </v-flex>
     </v-layout>
   </v-app>
 </template>
 
 <script>
+import Panel from '@/components/Panel'
 import AuthenticationService from '@/services/AuthenticationService'
 export default {
   name: 'login',
+  components: {
+    Panel
+  },
   data () {
     return {
       email: '',
